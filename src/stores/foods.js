@@ -8,7 +8,6 @@ export const useFoodsStore=defineStore('foods',{
     // food_detail:{}
    }),
 
-   
    actions:{
      foodListData(page){
        axios.get('http://127.0.0.1:8000/web/food_list/',{
@@ -30,4 +29,4 @@ export const useFoodsStore=defineStore('foods',{
       return arr
     }
    }
-})
+},{persist:true})

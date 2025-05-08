@@ -17,7 +17,7 @@
         <li v-if="foods.food_data.startPage>1"><a class="link" @click="foods.foodListData(foods.food_data.startPage-1)">&lt;</a></li>
         <li v-for="i,key in foods.range(foods.food_data.startPage,foods.food_data.endPage)" :key="key" 
         :class="i===foods.food_data.curpage?'active':''" @click="foods.foodListData(i)">
-          <a class="">{{ i }}</a>
+          <a class="link">{{ i }}</a>
         </li>
         <li v-if="foods.food_data.endPage<foods.food_data.totalpage"><a class="link" @click="foods.foodListData(foods.food_data.endPage+1)">&gt;</a></li>
       </ul>
@@ -58,5 +58,10 @@
 }
 a.link:hover{
   cursor: pointer;
+}
+p{
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
 }
 </style>

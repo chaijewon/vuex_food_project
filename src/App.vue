@@ -1,14 +1,13 @@
 <template>
-  <FoodListViewVue/>
+  <router-view/>
 </template>
 
 <script>
-import FoodListViewVue from './components/FoodListView.vue'
 
 export default {
   name: 'App',
   components: {
-    FoodListViewVue
+    
   }
 }
 </script>
