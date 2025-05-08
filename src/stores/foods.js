@@ -4,8 +4,8 @@ import axios from "axios";
 export const useFoodsStore=defineStore('foods',{
    state:()=>({
     // 데이터 저장 
-    food_data:{}
-    // food_detail:{}
+    food_data:{},
+    food_detail:{}
    }),
 
    actions:{
@@ -27,6 +27,15 @@ export const useFoodsStore=defineStore('foods',{
         start++
       }
       return arr
+    },
+    foodDetailData(fno){
+      axios.get('http://127.0.0.1:8000/web/food_detail/',{
+        params:{
+          fno:fno
+        }
+      }).then(res=>{
+         this.food_detail=res.data
+      })
     }
    }
 },{persist:true})
