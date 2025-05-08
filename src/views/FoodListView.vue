@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-md-3" v-for="fd,key in foods.food_data.fd" :key="key">
         <div class="thumbnail">
-          <a href="#">
+          <router-link :to="{name:'FoodDetailView',params:{fno:fd.fno}}">
             <img :src="'https://www.menupan.com'+fd.poster" style="width:230px;height: 150px;">
             <div class="caption">
               <p>{{fd.name}}</p>
             </div>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
